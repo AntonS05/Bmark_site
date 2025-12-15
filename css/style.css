@@ -406,7 +406,7 @@ body {
 .properties__header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 99px;
+    margin-bottom: 44px;
 }
 .properties__header-left {
 }
@@ -454,18 +454,21 @@ input[type="radio"]:checked + label {
 .properties__radio-label:not(:last-child) {
     margin: 0px 45px 0px 0px;
 }
+.properties__slider {
+    overflow: hidden;
+    padding: 55px;
+}
 .properties__column {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex: 0 1 33.333%;
-    margin-bottom: 55px;
+    gap: 30px;
+    flex-wrap: nowrap;
+    transition: transform 0.5s ease;
 }
 .properties__item {
-    flex: 0 1 auto;
     border-radius: 40px;
     max-height: 840px;
     padding: 36px 34px;
+    flex: 0 0 calc((100% - 60px) / 3);;
     transition: all 0.5s ease 0s;
 }
 .properties__item:hover {
@@ -537,6 +540,7 @@ input[type="radio"]:checked + label {
     align-items: center;
     text-align: center;
     border-radius: 20px;
+    width: 100%;
     max-width: 452px;
     max-height: 82px;
     font-family: inherit;
@@ -546,7 +550,7 @@ input[type="radio"]:checked + label {
     background-color: transparent;
     color: #13A6BA;
     border: #13A6BA solid 2px;
-    padding: 27px 151px;
+    padding: 27px 50px;
     transition: all 0.3s ease 0s;
 }
 .properties__item:hover .properties__item-button {
@@ -592,6 +596,7 @@ input[type="radio"]:checked + label {
     color: #772D8B;
     background-color: transparent;
 }
+
 @media (max-width: 1900px) {
     .properties__body {
     padding: 150px 0px 0px 0px;
@@ -599,31 +604,49 @@ input[type="radio"]:checked + label {
 }
 @media (max-width: 1730px) {
     .properties__header {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     padding: 0px 15px;
     }
 }
 @media (max-width: 1580px) {
-    .properties__item {
-        flex: 1 1 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+    .properties__item-title {
+        max-width: 230px;
     }
-    .properties__item:not(:last-child) {
-        margin-bottom: 20px;
+    .properties__item-icon {
+        padding-bottom: 20px;
+    }
+}
+@media (max-width: 1280px) {
+    .properties__item-title {
+        font-size: 24px;
+    }
+    .properties__item-price {
+        font-size: 42px;
+    }
+    .properties__item-text {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    .deteils-item__item {
+        font-size: 14px;
+    }
+    .properties__item-button {
+        padding: 20px 10px;
+        font-size: 24px;
+    }
+    .deteils-item {
+        margin-bottom: 25px;
+    }
+    .deteils-item__item:not(:last-child) {
+        margin-right: 10px;
+    }
+    .deteils-item__item:not(:first-child) {
+        padding-left: 10px;
     }
 }
 @media (max-width: 1070px) {
     .properties__column {
-        justify-content: center;
         margin-bottom: 15px;
-    }
-    .properties__item{
-        flex: 0 1 auto;
-        padding: auto;
     }
     .properties__body {
         padding: 100px 0px 0px 0px;
@@ -639,8 +662,8 @@ input[type="radio"]:checked + label {
         margin-bottom: 40px;
     }
     .properties__title {
-    font-size: 58px;
-    margin: 0px 0px 10px 0px;
+        font-size: 58px;
+        margin: 0px 0px 10px 0px;
     }
     .properties__buttons {
         display: flex;
@@ -651,11 +674,24 @@ input[type="radio"]:checked + label {
         width: 80px;
         height: 81px;
     }
+    .properties__slider {
+        padding: 35px;
+    }
+}
+@media (max-width: 1023px) {
+    .properties__item {
+        flex: 0 0 50%;
+    }
+}
+@media (max-width: 767px) {
+    .properties__item {
+        flex: 0 0 100%;
+    }
+    .properties__slider {
+        padding: 20px;
+    }
 }
 @media (max-width: 678px) {
-    .properties__item{
-        flex: 0 1 auto;
-    }
     .properties__body {
         padding: 50px 0px 0px 0px;
     }
@@ -666,8 +702,8 @@ input[type="radio"]:checked + label {
         padding: 0px 0px 30px;
     }
     .properties__button:not(:last-child) {
-    margin: 0px 15px 0px 0px;
-}
+        margin: 0px 15px 0px 0px;
+    }   
 }
 @media (max-width: 526px) {
     .properties__title {
@@ -684,7 +720,7 @@ input[type="radio"]:checked + label {
     }
     .properties__item-button {
         font-size: 24px;
-        padding: 20px 50px;
+        padding: 20px 20px;
     }
     .properties__item-title {
         margin-bottom: 10px;
